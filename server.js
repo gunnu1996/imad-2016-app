@@ -8,7 +8,7 @@ app.use(morgan('combined'));
 var articleOne={
     title: 'Article One|Kiriti',
     heading: 'Article One',
-    date:'Sept %,2016',
+    date:'Sept 5,2016',
     content:`<div>
                 <p>
                     This is the content of second page
@@ -17,7 +17,7 @@ var articleOne={
                     This is second line
                 </p>
             </div>`
-};
+    };
 
 function createTemplate(data){
         var title = data.title;
@@ -48,7 +48,7 @@ function createTemplate(data){
                                     </div>
                                 </div>    
                             </body>
-                        </html>`;
+                            </html>`;
         return htmlTemplate;
         }
 
