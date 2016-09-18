@@ -11,10 +11,10 @@ var articleOne={
     date:'Sept 5,2016',
     content:`<div>
                 <p>
-                    This is the content of second page
+                    This is the content of first page
                 </p>
                 <p>
-                    This is second line
+                    This is second line in the matter of first page
                 </p>
             </div>`
     };
