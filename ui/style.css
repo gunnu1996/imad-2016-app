@@ -1,6 +1,6 @@
 body {
     font-family: Eurostile-Med;
-    background-color: white;
+    background-color: Black;
     margin-top: 75px;
 }
 
@@ -23,7 +23,7 @@ body {
 .container{
             max-width:800px;
             margin: 0 auto;
-            color: #00004d;
+            color: White;
             font-family:Eurostile-Med;
             padding-left:20px;
             padding-right:20px;
