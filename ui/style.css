@@ -10,6 +10,8 @@ src: url('fonts/ARLRDBD.TTF') format('truetype');
 body{
 	font-family: BuxtonSketch, Rockwell, Serif;
 	color: white; 
+	background: url('img/homepage.jpg');
+    background-position: center;
 }
 
 .navbar-inner{
@@ -45,10 +47,6 @@ body{
 }
 #aboutme{
 	padding-top:80px;
-}
-.hero-unit{
-	background: url('img/homepage.jpg');
-    background-position: center;
 }
 
 .btn{
