@@ -10,10 +10,11 @@ src: url('fonts/ARLRDBD.TTF') format('truetype');
 body{
 	font-family: BuxtonSketch, Rockwell, Serif;
 	color: white; 
-	background: url('img/homepage.jpg');
+}
+.hero-unit{
+    background: url('img/homepage.jpg');
     background-position: center;
 }
-
 .navbar-inner{
 	color: white;
 	font-size:40px;
