@@ -1,0 +1,77 @@
+@font-face{
+font-family: 'BuxtonSketch';
+src: url('fonts/BuxtonSketch.ttf') format('truetype');
+}
+@font-face{
+font-family: 'ArialBold';
+src: url('fonts/ARLRDBD.TTF') format('truetype');
+}
+
+body{
+	font-family: BuxtonSketch, Rockwell, Serif;
+	color: white; 
+}
+
+.navbar-inner{
+	color: white;
+	font-size:40px;
+	padding-left: 0px;
+	padding-right: 0px;
+	min-height: 80px;
+	background: none;
+	border: none;
+	box-shadow:none ;
+	text-shadow:none;
+}
+
+.container{
+            max-width:800px;
+            margin: 0 auto;
+            padding-top:0px;
+            padding-left:20px;
+            padding-right:20px;
+        }
+#title{
+	padding-top:20px;
+}
+
+#info{
+	padding-top:300px;
+}
+
+#ibottom{
+	font-size:30px;
+
+}
+#aboutme{
+	padding-top:80px;
+}
+.hero-unit{
+	background: url('img/homepage.jpg');
+    background-position: center;
+}
+
+.btn{
+	background:red;
+	color: white;
+	font-weight: bold;
+}
+
+.post-container {
+    margin: 20px 20px 0 0;  
+    border: 0px solid #333;
+    overflow: auto
+}
+.post-thumb {
+    float: left
+}
+.post-thumb img {
+    display: block
+}
+.post-content {
+    margin-left: 210px
+}
+.post-title {
+    font-weight: bold;
+    font-size: 200%
+}
