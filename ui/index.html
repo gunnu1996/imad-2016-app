@@ -1,94 +1,439 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content ="width=device-width,initial-scale=1,user-scalable=yes" />
-		<title>KIRITI</title>
-		<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-		<link rel="stylesheet" href="style.css" type="text/css" />
-    </head>
-    <body>
-		<div class="hero-unit">
-			<div class="container">
-				<div id="top">
-				<div class="navbar">
-					<div class="navbar-inner">
-						<ul class="nav">
-						  <li><a href="#top">HOME</a><li>
-						  <li style="padding-left: 98px;"><a href="#aboutme">ABOUT ME</a></li>
-						  <li><a href="#contact">CONTACT</a></li>
-						  <li><a href="#design">THIS DESIGN</a></li>
-						</ul>
-					</div><!--navbar inner end-->
-				</div><!--navbar end-->
-				</div><!--top end-->
-					<div id="title" class="text-center">	
-						<h1>MY WEB APP</h1>
-					</div><!--title end-->
-					<div id="info">
-					<div id="ibottom"><h3>THIS IS MY WEBAPP BEING HOSTED ON IMAD CLOUD</h3></div>
-						<a href="/index.html" class="btn">READ MORE</a>
-					</div><!--info end-->
-					<div id="aboutme">
-						<div class="post-container">                
-							<div class="post-thumb"><img src="img/MyPhoto.png"/></div>
-							<div class="post-content" style="padding-left: 100px;">
-								<h3 class="post-title" style="font-size: 70px;">ABOUT ME</h3>
-								<div class="mydata">
-									<p>KIRITI</p>
-									<p>Born on 1-2-96</p>
-									<p>B.Tech Final Year</p>
-									<p>Electronics and Communication Engineering</p>
-									<p>University College of Engineering Kakinada</p>
-									<p>From Vijayawada </p>
-								</div><!--My data end-->
-							</div><!--End aboutme-->
-					<div class="text-center">
-						<a href="#top" class="btn">TOP</a>
-						<a href="/index.html" class="btn">READ MORE</a>
-						<a href="#contact" class="btn">CONTACT ME</a>
-					</div>
-					<div class= "text-center">
-					<div id="contact" style="padding-top: 400px;">
-						<h1>CONTACT ME</h1>
-						<div class="Contacts">
-								<p>
-								<a href="https://www.facebook.com/gunnu1996">
-								<img border="0" alt="Facebook Link" src="img/socialfb.png" width="100" height="100">
-								</a>
-								</p>
-								<p>
-								<a href="https://mobile.twitter.com/gunnu1996">
-								<img border="0" alt="Twitter Link" src="img/socialtwitter.png" width="100" height="100">
-								</a>
-								</p>
-								<p>
-								<a href="mailto:gunnu1996@gmail.com">
-								<img border="0" alt="Mail Link" src="img/socialmail.png" width="100" height="100">
-								</a>
-								</p>
-						</div>
-						<a href="#top" class="btn">TOP</a>
-					</div><!--contact end-->
-					</div><!--contact align end-->
-					
-					<div class= "text-center">
-					<div id="design" style="padding-top: 250px;">
-						<h1>DESIGN</h1>
-						<h6>Webpage design from YouTube tutorials</h6>
-						<h6>Used Bootstrap from GitHub</h6>	
-						<h6>Coding of this webpage from imad</h6>
-						<h6>Hosted on IMAD cloud</h6>
-						<h6>COPYRIGHTS OF THE TOP IMAGE USED IN THIS WEBSITE LIES WITH THE REPECTIVE OWNER</h6>
-						<a href="#top" class="btn">TOP</a>
-					</div><!--design end-->
-					</div><!--design align end-->
-		
-	</div><!--CONTAINER END-->
-	</div><!--End hero-unit-->
-    <script type="text/javascript" src="/ui/main.js">
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>KIRITI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="http://code.jquery.com/jquery.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<style>
+
+    /* GLOBAL STYLES*/
+	
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+
+	.navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+  </head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+			<!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">MyWebApp</a>
+			<!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#aboutme">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="assets/img/examples/slide-01.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Website Code</h1>
+              <p class="lead">Learnt how to make WebApps in IMAD course as a part of September Course</p>
+              <a class="btn btn-large btn-primary" href="http://www.imad.tech/">Go to IMAD</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="assets/img/examples/slide-02.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Design of this Website</h1>
+              <p class="lead">The Website structure is built using Bootstrap</p>
+              <a class="btn btn-large btn-primary" href="http://getbootstrap.com/">Get Bootstrap</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="assets/img/examples/slide-03.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Website Hosting</h1>
+              <p class="lead">Website is being hosted on IMAD console</p>
+              <a class="btn btn-large btn-primary" href="http://www.imad.tech/">IMAD</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>About Me</h2>
+			<p>KIRITI</p>
+			<p>Born on 1-2-96</p>
+			<p>B.Tech Final Year</p>
+			<p>Electronics and Communication Engineering</p>
+			<p>University College of Engineering Kakinada</p>
+			<p>From Vijayawada </p>
+          <p><a class="btn btn-primary" href="#aboutme">More</a></p>
+        </div><!-- /.span4 -->
+        <div class="span4">
+          <div id="contact">
+		  <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Contact Me</h2>
+			<p><a href="https://www.facebook.com/gunnu1996"><img border="0" alt="Facebook Link" src="assets/img/socialfb.png" width="50" height="50"></a></p>
+			<p><a href="https://mobile.twitter.com/gunnu1996"><img border="0" alt="Twitter Link" src="assets/img/socialtwitter.png" width="50" height="50"></a></p>
+			<p><a href="mailto:gunnu1996@gmail.com"><img border="0" alt="Mail Link" src="assets/img/socialmail.png" width="50" height="50"></a></p>
+        </div><!-- /.span4 -->
+		</div><!--End of ID-->
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140">
+          <h2>Design</h2>
+          <p style="padding-top: 130px">You can learn how to design a basic website in YouTube tutorials </p>
+          <p><a class="btn btn-primary" href="https://www.youtube.com/watch?v=314m7YBRFvQ&list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V">Go to YouTube</a></p>
+        </div><!-- /.span4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+	  
+	  <div class= "text-center" style="padding-top:20px"><p><a class="btn btn-success" href="#myCarousel">Home</a></p></div>
+      <hr class="featurette-divider">
+
+      <div id="aboutme">
+	  <div class="featurette">
+        <img class="featurette-image pull-right" src="assets/img/MyPhoto.png" width="500" height="500">
+        <h1 class="featurette-heading">About Me</h1>
+        <p class="lead">
+			<p>Name			:	KIRITI</p>
+			<p>DOB			:	1-2-96</p>
+			<p>Education	:	B.Tech Final Year</p>
+			<p>Branch		:	Electronics and Communication Engineering</p>
+			<p>College		:	University College of Engineering Kakinada</p>
+			<p>Hometown		:	Vijayawada </p>
+		</p>
+		<div style="padding-top:20px"><p><a class="btn btn-success" href="#myCarousel">Home</a></p></div>      
+      </div>
+	  </div>
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+	 
+      <footer>
+		<hr class="featurette-divider">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2016 Kiriti &middot Utilised Bootstrap</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
     </script>
-    </div>
-    </div>
-    </body>
+    <script src="assets/js/holder/holder.js"></script>
+  </body>
 </html>
