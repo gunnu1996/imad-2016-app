@@ -11,6 +11,10 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, '/ui', 'main.js'));
 });
 
+app.get('/game',function(req,res) {
+ res.sendFile(path.join(__dirname, '/ui', '/game.html'));
+});
+
 app.use(express.static(__dirname + '/ui'));
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
